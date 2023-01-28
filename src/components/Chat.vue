@@ -13,9 +13,13 @@ export default {
     },
     methods: {
         sendChat() {
-            console.log(this.chatMessage)
-            api.putChat(this.getWs, this.getCurrentRoom.name, this.getUser.username, this.chatMessage)
-            this.chatMessage = ''
+            if(this.chatMessage.trim() !== ''){
+                api.putChat(this.getWs, this.getCurrentRoom.name, this.getUser.username, this.chatMessage)
+                this.chatMessage = ''
+            }
+            else{
+                alert('Nothing found in chat input.')
+            }
         },
         toggleChat(){
             this.growChat = !this.growChat
@@ -42,7 +46,7 @@ export default {
             <ul style="flex-grow: 1;">
                 <template v-for="message in this.getChat.chat">
                     <li :key="message.message" v-if="message.clientName !== getUser.username">{{ message.clientName + ': ' + message.message }}</li>
-                    <li  :key="message" class="right" v-else>{{ message.message }}</li>
+                    <li :key="message" class="right" v-else>{{ message.message }}</li>
                 </template>
             </ul>
             <div class="horizontal-container">
@@ -73,10 +77,12 @@ export default {
     width: 100%;
     min-width: 250px;
     max-width: 250px;
-    height: 100%;
+    height: 60vh;
+    max-height: 60vh;
     margin-left: 10px;
     transition: all .3s ease;
-    overflow: hidden scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .chat-container * {
     overflow-anchor: none;
@@ -159,13 +165,14 @@ li {
 }
 .right {
     text-align: right;
+    color: #a1a1a1;
 }
 
 @media screen and (max-width: 1355px) {
     .chat-container{
         height: 15vh;
         margin-left: 0px;
-        max-width: 100%;
+        min-width: 40vw;
     }
     .chat-button-hide {
         display: none;
@@ -178,9 +185,9 @@ li {
 
 @media screen and (max-width: 759px) {
     .chat-container{
-        height: 25vh;
+        height: 20vh;
         margin-left: 0px;
-        max-width: 100%;
+        min-width: 60vw;
     }
     .chat-button-hide {
         display: none;
@@ -192,7 +199,8 @@ li {
 }
 @media screen and (max-width: 460px){
   .chat-container{
-        height: 45vh;
+        height: 35vh;
+        min-width: 70vw;
     }
 }
 
