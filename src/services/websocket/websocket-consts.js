@@ -19,8 +19,10 @@ export const Type = {
     PATH: 'path',
     AUTOPLAY: 'autoplay',
     LOOP: 'loop',
-    INDEX: 'index'
-    
+    INDEX: 'index',
+    VIDEO: 'video',
+    VIDEOS: 'videos'
+
 }
 
 export const Scope = {
