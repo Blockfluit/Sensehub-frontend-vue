@@ -1,8 +1,6 @@
 <template>
     <div class="home-page">
-        <p style="text-align: center;margin-top:-10px;margin-bottom: 10px;">Namens het SenseHub team sorry voor de storingen
-        </p>
-        <input v-model="searchValue" placeholder="Title, Tag" class="search-bar" type="text">
+        <input v-model="searchValue" placeholder="Search..." class="search-bar" type="text">
         <div v-if="!isLoading">
             <div v-if="!searchValue">
                 <VideoCarrousel title="Watch list" :collections="getWatchList" :key="`wl-${getWatchList.length}`" />

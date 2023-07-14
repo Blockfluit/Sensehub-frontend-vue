@@ -65,6 +65,7 @@ export default {
   top: var(--sm);
   right: var(--sm);
   font-size: var(--lg);
+  z-index: 10;
 }
 
 /*.like-button svg {*/

@@ -6,22 +6,25 @@
 
       <div class="info">
         <div class="row">
-          <span class="text-lg bold">
-            {{ current.name }}
-          </span>
-          <div v-if="getUser.isAdmin" class="edit">
-            <img @click="editVideo" src="icons/pen.svg" alt="">
-            <img @click="deleteVideo" src="icons/trash-can.svg" alt="">
+          <div class="title">
+            <span class="text-lg bold">
+              {{ current.name }}
+            </span>
+            <div v-if="getUser.isAdmin" class="edit">
+              <img @click="editVideo" src="icons/pen.svg" alt="">
+              <img @click="deleteVideo" src="icons/trash-can.svg" alt="">
+            </div>
           </div>
+          <VideoButtons v-if="getCollection.length > 1" @prev="selectPrev" @next="selectNext" />
         </div>
 
-        <p class="text-md text-dark">Duration: {{ current.duration }}</p>
-        <p v-if="getCollection.tags.length" class="text-md text-dark">
+        <p class="text-md text-color">Duration: {{ current.duration }}</p>
+        <p v-if="getCollection.tags.length" class="text-md text-color">
           <span>Tags: </span>
           <span v-for="(tag, index) in getCollection.tags" :key="index">{{ tag }}{{ index === getCollection.tags.length-1 ? '' : ', ' }}</span>
         </p>
 
-        <VideoButtons v-if="getCollection.length > 1" @prev="selectPrev" @next="selectNext" />
+        
       </div>
 
       <div v-if="getCollection.length > 1" :key="getCollection.id" class="table-scroll-x">

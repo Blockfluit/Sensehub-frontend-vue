@@ -1,13 +1,12 @@
 .video-card {
   min-width: 20%;
   background-color: var(--card-color);
-  box-shadow: var(--card-shadow);
   border-radius: var(--sm);
 
   &:hover {
     cursor: pointer;
     .video-card__image img, .video-card__info {
-      opacity: .6;
+      opacity: 1;
     }
   }
 
@@ -20,6 +19,9 @@
       width: 100%;
       aspect-ratio: 2 / 3;
       object-fit: cover;
+    }
+    img:hover {
+      -webkit-filter: brightness(70%);
     }
   }
   &__image, img {

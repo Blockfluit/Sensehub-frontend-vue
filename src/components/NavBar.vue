@@ -3,7 +3,7 @@
         <div class="nav-bar__content">
             <div class="nav-bar__main">
                 <router-link :to="{ name: 'home' }">
-                    <img src="logo.svg" alt="">
+                    <h1 class="logo">Dellekes</h1>
                 </router-link>
             </div>
             <img @click="onHamburgerClick" ref="hamburger" src="icons/bars.svg" class="hamburger" alt="">

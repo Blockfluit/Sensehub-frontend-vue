@@ -7,9 +7,8 @@
 
     cursor: pointer;
     background-color: var(--card-color);
-    padding: var(--sm);
+    padding: var(--sm) var(--md);
     border-radius: var(--sm);
-    box-shadow: var(--card-shadow);
 
     img {
       width: var(--md);

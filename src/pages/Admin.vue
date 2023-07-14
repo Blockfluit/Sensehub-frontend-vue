@@ -24,16 +24,12 @@
     <div class="table-scroll-x">
       <table>
         <tr>
-          <th>ID</th>
           <th class="grow">Username</th>
           <th>Role</th>
           <th>Last login</th>
           <th></th>
         </tr>
         <tr v-for="(user, index) in getUsers" :key="index">
-          <td>
-            <p>{{ user.id }}</p>
-          </td>
           <td>
             <p>{{ user.username }}</p>
           </td>
@@ -51,7 +47,11 @@
     </div>
   </div>
 </template>
-
+<style scoped>
+.admin-page {
+  padding-top: 100px !important;
+}
+</style>
 <script>
 import {CREATE_USER, DELETE_USER, FETCH_USERS} from "@/store/actions.type";
 import {mapGetters} from "vuex";
@@ -83,7 +83,9 @@ export default {
       })
     },
     deleteUser(user) {
-      this.$store.dispatch(DELETE_USER, user.id)
+      if(confirm("Are you sure?")){
+        this.$store.dispatch(DELETE_USER, user.id)
+      }
     }
   },
   computed: {

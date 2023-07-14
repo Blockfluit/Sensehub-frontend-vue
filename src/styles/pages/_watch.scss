@@ -1,15 +1,20 @@
+@import "../variables/breakpoints";
+
 .watch {
+  padding-top: 16px;
 
   .info {
-    padding: var(--sm);
+    padding: var(--sm) 0px;
 
     .row {
       display: flex;
+      justify-content: space-between;
       align-items: baseline;
-    }
+      flex-wrap: wrap;
 
-    .video-buttons {
-      padding-top: var(--md);
+      .title{
+        display: flex;
+      }
     }
 
     .edit {

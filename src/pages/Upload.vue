@@ -24,7 +24,11 @@
     <VideoCard :item="video" />
   </div>
 </template>
-
+<style scoped>
+.upload-page {
+  padding-top: 100px !important;
+}
+</style>
 <script>
 import Button from "../components/Button";
 import {CREATE_COLLECTION} from "../store/actions.type";

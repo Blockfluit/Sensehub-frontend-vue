@@ -10,14 +10,15 @@
 
     &:hover {
       .next, .prev {
-        opacity: .8;
+        opacity: 1;
       }
     }
+    
 
     .next, .prev {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-50.15%);
 
       padding: 0 var(--md);
       margin: 0 var(--sm);
@@ -25,6 +26,10 @@
 
       cursor: pointer;
       opacity: 0;
+
+      @media (max-width: $mobile-breakpoint) {
+      opacity: 1;
+    }
 
       img {
         filter: var(--filter-text-color);
