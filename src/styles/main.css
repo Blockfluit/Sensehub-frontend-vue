@@ -399,7 +399,6 @@ input[type=file]::-webkit-file-upload-button {
 .form .button {
   width: 50%;
   margin-top: var(--lg);
-  margin-right: auto;
 }
 
 .nav-bar {

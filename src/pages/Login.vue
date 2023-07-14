@@ -2,7 +2,7 @@
   <div class="login-page">
     <form @submit.prevent="submit" class="form">
 
-      <img src="/logo.svg" alt="" class="mb-2">
+      <h1 class="logo">DellekesHub</h1>
       
       <div class="input-group">
         <input v-model="username" type="text" placeholder="username" class="input-group__input">
@@ -12,11 +12,21 @@
         <input v-model="password" type="password" placeholder="password" class="input-group__input">
       </div>
 
-      <Button :loading-state="isLoading">Login</Button>
+      <div class="login-button">
+        <Button :loading-state="isLoading">Login</Button>
+      </div>
     </form>
   </div>
 </template>
-
+<style scoped>
+.logo {
+  text-align: center;
+}
+.login-button {
+  display: flex;
+  justify-content: center;
+}
+</style>
 <script>
 import {LOGIN} from "@/store/actions.type";
 import Button from "@/components/Button";
