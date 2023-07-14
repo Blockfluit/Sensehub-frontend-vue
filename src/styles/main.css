@@ -696,7 +696,7 @@ table td .button {
 :root {
   --bg-color: #1e1e1e;
   --active-color: #007acc;
-  --nav-height: 44px;
+  --nav-height: 64px;
   --card-color: #2d2d30;
   --card-shadow: 0px 0px 8px 0px rgba(0,0,0,.6);
   --text-color: #D3D3D3;

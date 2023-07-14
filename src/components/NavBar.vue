@@ -3,7 +3,10 @@
         <div class="nav-bar__content">
             <div class="nav-bar__main">
                 <router-link :to="{ name: 'home' }">
-                    <h1 class="logo">Dellekes</h1>
+                    <div class="logo-container">
+                        <img src="/icons/dellekes_logo.png" alt="logo" class="logo">
+                        <span class="logo-text">DellekesHub</span>
+                    </div>
                 </router-link>
             </div>
             <img @click="onHamburgerClick" ref="hamburger" src="icons/bars.svg" class="hamburger" alt="">
@@ -28,7 +31,28 @@
         </div>
     </div>
 </template>
-
+<style scoped>
+.logo-container {
+    display: flex;
+    align-items:end;
+    padding: 10px 0px 4px 0px;
+    height: 65px;
+}
+.logo {
+    position: absolute;
+    height: 50px;
+    filter:brightness(70%);
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.logo-text {
+    z-index: 2;
+    padding: 0px;
+    font-weight: 300;
+    font-size: 14px;
+    height: 12px;
+}
+</style>
 <script>
 import { LOGOUT } from "@/store/actions.type";
 import { mapGetters } from "vuex";
