@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { storeToRefs } from 'pinia'
 import { useMainStore } from '../cinema/CinemaStore'
 import api from '../services/websocket/websocket-service'
@@ -37,4 +37,4 @@ export default {
 </template>
 
 <style scoped>
-</style>
+</style> -->

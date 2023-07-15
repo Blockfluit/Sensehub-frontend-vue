@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="showCarousel" class="video-carousel">
-      <div class="video-carousel__header mb-2">
+      <div class="video-carousel__header mb-1">
         <span class="text-lg bold">{{ title }}</span>
         <span class="text-dark ml-1">{{ collections.length }}</span>
       </div>

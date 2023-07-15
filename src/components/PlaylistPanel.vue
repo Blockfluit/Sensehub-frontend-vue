@@ -69,7 +69,7 @@ export default {
 <style scoped>
 .wrapper {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     flex-direction: column;
     transition: all .3s ease;
     position: fixed;

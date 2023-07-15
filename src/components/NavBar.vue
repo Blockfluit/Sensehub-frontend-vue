@@ -34,23 +34,23 @@
 <style scoped>
 .logo-container {
     display: flex;
-    align-items:end;
-    padding: 10px 0px 4px 0px;
-    height: 65px;
+    flex-direction: column;
+    height: 75px;
 }
 .logo {
-    position: absolute;
-    height: 50px;
+    height: 54px;
     filter:brightness(70%);
     z-index: 1;
-    margin-bottom: 10px;
+    margin-top: 4px;
 }
 .logo-text {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     z-index: 2;
-    padding: 0px;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 14px;
-    height: 12px;
+    width: 100px;
 }
 </style>
 <script>
